@@ -1,0 +1,9 @@
+---
+ - hosts: all 
+   become: true
+   tasks: 
+         - name: "lines files"
+           path: /etc/selinux/config
+           regex: '^SELINUX='
+           line: 'SELINUX=enforcing'
+
